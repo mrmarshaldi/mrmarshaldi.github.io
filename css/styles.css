@@ -21,6 +21,11 @@ body {
     display: none;
 }
 
+.section-title {
+    text-align: center;
+    text-decoration-line: underline;
+    margin: 1rem 0px;
+}
 
 /* Header Section*/
 
@@ -94,26 +99,18 @@ body {
 
 .banner {
 
-    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    /* Use "linear-gradient" to add a darken background effect to the image
     /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/morale.png"); */
   
     background-image: url("../images/morale.png");
     height: 500px;
     width: 100%;
-  
-    /* Position and center the image to scale nicely on all screens */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 /* Menu */
-
-.section-title {
-    text-align: center;
-    text-decoration-line: underline;
-    margin-bottom: 1.2rem;
-}
 
 .menu {
     background-color: #f1f1f1;
@@ -131,10 +128,7 @@ body {
 
 .menu-links li{
     list-style: none;
-}
-
-.menu-links li a{
-    text-decoration: none;
+    position: relative;
     color: royalblue;
     display: block;
     padding: 1rem;
@@ -145,11 +139,24 @@ body {
     cursor: pointer;
 }
 
+/* .menu-links li a::after {
+    position: absolute;
+    right: 1rem;
+    bottom: 5px;
+    left: 1rem;
+    display: block;
+    content: "";
+    transition: all .1s;
+    transform: translateY(10px);
+    opacity: 0;
+    border-top: 3px solid black;
+} */
+
 
 .menu-box {
     display: grid;
-    padding: 10px;
-    margin-bottom: -20px;
+    padding: 1rem 1rem;
+    margin-bottom: -2.4rem;
     column-gap: 25px;
     width: 100%;
     height: 23vh;
@@ -181,7 +188,8 @@ body {
 
 .menu-box > .menu-line {
     grid-area: mLine;
-    border-top: 1.4px solid rgba(99, 99, 99, 0.4);
+    height: auto;
+    border-bottom: 1.4px solid rgba(99, 99, 99, 0.4);
 }
 
 

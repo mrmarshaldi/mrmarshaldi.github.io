@@ -5,6 +5,8 @@ const toggleButton = document.querySelector('.burger-btn')
 const navbarLinks = document.querySelector('.navbar-links')
 const buttonLine = document.querySelectorAll('.burger-btn-line')
 
+const mainCourse = document.querySelector('.menu-links')
+
 toggleButton.addEventListener('click', () => {
     
     if(navbarLinks.className === 'navbar-links'){
@@ -27,3 +29,7 @@ toggleButton.addEventListener('click', () => {
 })
 
 // End of toggle burger button
+
+mainCourse.addEventListener('click', () => {
+    console.log('OK')
+})
