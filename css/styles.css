@@ -9,8 +9,6 @@ html {
 }
 
 body {
-    /* font-family: 'Libre Baskerville', serif; */
-    /* font-family: 'Bebas Neue', cursive; */
     font-family: 'Roboto Slab', serif;
     color: rgb(56, 56, 56);
     background-color: rgb(231, 231, 231);
@@ -24,11 +22,16 @@ body {
                         'menu';
 } */
 
+/* Functional Class */
+
+.display-none {
+    display: none;
+}
+
+/* End of Functional Class */
 
 
-
-
-/* Header */
+/* Header Section*/
 
 .navbar {
     /* grid-area: header; */
@@ -87,7 +90,7 @@ body {
 
 .toggle-btn .bar {
     width: 100%;
-    height: 3px;
+    height: 2px;
     background-color: white;
     border-radius: 10px;
 
@@ -96,11 +99,11 @@ body {
 /* Main Banner */
 
 .banner {
-    /* The hero image */
+
     /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/morale.png");
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/morale.png"); */
   
-    /* Set a specific height */
+    background-image: url("../images/morale.png");
     height: 500px;
     width: 100%;
   
@@ -108,13 +111,8 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
+}
 
-/* .banner img {
-    height: 40vh;
-    width: 100%;
-    object-fit: cover;
-} */
 
 
 /* Info */
@@ -125,13 +123,10 @@ body {
 }
 
 .info-title {
-    /* background-color: darksalmon; */
     font-weight: 700;
 }
 
-/* .info-1, .info-2 {
-    background-color: brown;
-} */
+
 
 .info-1 {
     display: flex;
@@ -146,12 +141,7 @@ body {
     line-height: 0px;
 }
 
-.whatsappIcon {
-    width: 20px;
-    height: 20px;
-    padding-right: 8px;
-    vertical-align: middle;
-}
+
 
 @media (max-width: 400px) {
     .toggle-btn {

@@ -1,5 +1,8 @@
-const toggleButton = document.getElementsByClassName('toggle-btn')[0]
-const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+
+// Toggle burger button in navbar
+
+const toggleButton = document.querySelector('.toggle-btn')
+const navbarLinks = document.querySelector('.navbar-links')
 
 toggleButton.addEventListener('click', () => {
     navbarLinks.classList.toggle('active')
