@@ -129,9 +129,13 @@ body {
 .menu-links li{
     list-style: none;
     position: relative;
-    color: royalblue;
     display: block;
     padding: 1rem;
+}
+
+.menu-links li a {
+    text-decoration: none;
+    color: royalblue;
 }
 
 .menu-links li:hover {
@@ -190,6 +194,23 @@ body {
     grid-area: mLine;
     height: auto;
     border-bottom: 1.4px solid rgba(99, 99, 99, 0.4);
+}
+
+/* Menu Categories */
+
+.appetizer {
+    position: relative;
+    display: inherit;
+}
+
+.maincourse {
+    position: relative;
+    display: none;
+}
+
+.drinks {
+    position: relative;
+    display: none;
 }
 
 

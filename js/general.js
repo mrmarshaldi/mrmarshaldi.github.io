@@ -1,11 +1,18 @@
-
-// Toggle burger button in navbar
-
 const toggleButton = document.querySelector('.burger-btn')
 const navbarLinks = document.querySelector('.navbar-links')
 const buttonLine = document.querySelectorAll('.burger-btn-line')
 
-const mainCourse = document.querySelector('.menu-links')
+
+const menuAppetizer = document.querySelector('.menu-links-appetizer')
+const menuMainCourse = document.querySelector('.menu-links-maincourse')
+const menuDrinks = document.querySelector('.menu-links-drinks')
+
+
+const appetizer = document.querySelectorAll('.appetizer')
+const maincourse = document.querySelectorAll('.maincourse')
+const drinks = document.querySelectorAll('.drinks')
+
+// Navbar burger button toggle
 
 toggleButton.addEventListener('click', () => {
     
@@ -30,6 +37,61 @@ toggleButton.addEventListener('click', () => {
 
 // End of toggle burger button
 
-mainCourse.addEventListener('click', () => {
-    console.log('OK')
+
+// Menu Categories link functionality
+
+menuAppetizer.addEventListener('click', () => {
+    
+    for (i = 0; i < appetizer.length; i++) {
+        appetizer[i].style.display = 'inherit'
+        appetizer[i].style.position = 'relative'
+    }
+    
+    for (i = 0; i < maincourse.length; i++) {
+        maincourse[i].style.display = 'none'
+        maincourse[i].style.position = 'absolute'
+    }
+    
+    for (i = 0; i < drinks.length; i++) {
+        drinks[i].style.display = 'none'
+        drinks[i].style.position = 'absolute'
+    }
 })
+
+menuMainCourse.addEventListener('click', () => {
+    
+    for (i = 0; i < appetizer.length; i++) {
+        appetizer[i].style.display = 'none'
+        appetizer[i].style.position = 'absolute'
+    }
+    
+    for (i = 0; i < maincourse.length; i++) {
+        maincourse[i].style.display = 'inherit'
+        maincourse[i].style.position = 'relative'
+    }
+    
+    for (i = 0; i < drinks.length; i++) {
+        drinks[i].style.display = 'none'
+        drinks[i].style.position = 'absolute'
+    }
+})
+
+menuDrinks.addEventListener('click', () => {
+    
+    for (i = 0; i < appetizer.length; i++) {
+        appetizer[i].style.display = 'none'
+        appetizer[i].style.position = 'absolute'
+    }
+    
+    for (i = 0; i < maincourse.length; i++) {
+        maincourse[i].style.display = 'none'
+        maincourse[i].style.position = 'absolute'
+    }
+    
+    for (i = 0; i < drinks.length; i++) {
+        drinks[i].style.display = 'inherit'
+        drinks[i].style.position = 'relative'
+    }
+})
+
+// End of menu category links function
