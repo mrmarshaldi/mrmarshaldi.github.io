@@ -9,10 +9,24 @@ html {
 }
 
 body {
-    /* font-family: 'Roboto Slab', serif; */
     font-family: 'Lato', sans-serif;
     color: rgb(56, 56, 56);
     background-color: rgb(231, 231, 231);
+}
+
+h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
 }
 
 
@@ -26,6 +40,7 @@ body {
     text-align: center;
     text-decoration-line: underline;
     margin: 1rem 0px;
+    width: 100%;
 }
 
 /* Header Section*/
@@ -40,7 +55,7 @@ body {
     color: white;
     box-shadow: 0px 1px 5px black;
     z-index: 1;
-    position: absolute;
+    position: fixed;
 }
 
 .navbar-title {
@@ -122,7 +137,8 @@ body {
 
 .menu-links ul {
     display: flex;
-    justify-content: space-evenly;
+    position: relative;
+    justify-content: space-around;
     margin: 0px;
     padding: 0px;
 }
@@ -136,26 +152,40 @@ body {
 
 .menu-links li a {
     text-decoration: none;
-    color: royalblue;
+    color: rgb(56, 56, 56);
 }
 
 .menu-links li:hover {
-    background-color: rgb(187, 187, 187);
+    /* background-color: rgb(187, 187, 187); */
     cursor: pointer;
 }
 
-/* .menu-links li a::after {
-    position: absolute;
-    right: 1rem;
-    bottom: 5px;
-    left: 1rem;
-    display: block;
-    content: "";
-    transition: all .1s;
-    transform: translateY(10px);
-    opacity: 0;
-    border-top: 3px solid black;
+.menu-links-appetizer {
+    margin-left: 30px;
+}
+
+/* .menu-links-maincourse {
+    margin-right: 25px;
 } */
+
+.menu-links-drinks {
+    margin-right: 50px;
+}
+
+.menu-links li:hover::after,
+.menu-links-appetizer.active::after,
+.menu-links-maincourse.active::after,
+.menu-links-drinks.active::after {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 5px;
+    width: 100%;
+    border-radius: 1px;
+    border-bottom: 3px solid rgba(56, 56, 56, 0.7);
+    content: "";
+}
+
 
 
 /* .food-box = grid container for items in food category */
@@ -183,15 +213,11 @@ body {
 }
 
 .food-box > .menu-name {
-    /* background-color: hotpink; */
     grid-area: mName;
-    font-weight: 400;
-    font-size: 1.2rem;
     padding-bottom: 10px;
 }
 
 .food-box > .menu-image {
-    /* background-color: goldenrod; */
     grid-area: mImage;
     max-width: 150px;
     max-height: 150px;
@@ -200,21 +226,23 @@ body {
 }
 
 .food-box > .menu-description {
-    /* background-color: greenyellow; */
     grid-area: mDescription;
     font-weight: 300;
     
 }
 
-.menu-price {
-    grid-area: mPrice;
-    padding-top: 2px;
-}
 
+/* div for food and drink categories */
 .category-title {
     margin-top: 50px;
-    margin-left: 30px;
+    padding-left: 30px;
+    display: block;
+    width: auto;
+    background-color: rgba(223, 223, 223, 0.5);
 }
+
+
+/* .drink-box = grid container for items in drink category */
 
 .drink-box {
     display: flex;
@@ -245,7 +273,10 @@ body {
     list-style: none;  
 }
 
-
+.menu-price {
+    grid-area: mPrice;
+    padding-top: 2px;
+}
 
 /* Menu Categories */
 

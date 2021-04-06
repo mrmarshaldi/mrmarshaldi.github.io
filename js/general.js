@@ -42,6 +42,11 @@ toggleButton.addEventListener('click', () => {
 
 menuAppetizer.addEventListener('click', () => {
     
+    menuAppetizer.className = 'menu-links-appetizer active'
+    menuMainCourse.classList.remove('active')
+    menuDrinks.classList.remove('active')
+    
+    
     for (i = 0; i < appetizer.length; i++) {
         appetizer[i].style.display = 'inherit'
         appetizer[i].style.position = 'relative'
@@ -60,6 +65,10 @@ menuAppetizer.addEventListener('click', () => {
 
 menuMainCourse.addEventListener('click', () => {
     
+    menuMainCourse.className = 'menu-links-maincourse active'
+    menuAppetizer.classList.remove('active')
+    menuDrinks.classList.remove('active')
+
     for (i = 0; i < appetizer.length; i++) {
         appetizer[i].style.display = 'none'
         appetizer[i].style.position = 'absolute'
@@ -77,6 +86,10 @@ menuMainCourse.addEventListener('click', () => {
 })
 
 menuDrinks.addEventListener('click', () => {
+    
+    menuDrinks.className = 'menu-links-drinks active'
+    menuMainCourse.classList.remove('active')
+    menuAppetizer.classList.remove('active')
     
     for (i = 0; i < appetizer.length; i++) {
         appetizer[i].style.display = 'none'
