@@ -168,23 +168,26 @@ body {
     width: 100%;
     min-height: 180px;
     grid-template-areas:
-    'mImage mName'
-    'mImage mDescription'
-    'mLine mLine';
+    'mImage mName mPrice'
+    'mImage mDescription mDescription'
+    'mLine mLine mLine';
     grid-template-rows: .3fr 1fr;
     grid-template-columns: .3fr 1fr;
 }
 
 .food-box::after {
     content: "";
-    margin-top: 6px;
+    margin-top: 12px;
     grid-area: mLine;
-    border-bottom: 1.4px solid rgba(99, 99, 99, 0.4);
+    border-bottom: .25px solid rgba(99, 99, 99, 0.3);
 }
 
 .food-box > .menu-name {
     /* background-color: hotpink; */
     grid-area: mName;
+    font-weight: 400;
+    font-size: 1.2rem;
+    padding-bottom: 10px;
 }
 
 .food-box > .menu-image {
@@ -192,23 +195,25 @@ body {
     grid-area: mImage;
     max-width: 150px;
     max-height: 150px;
-    /* display: grid;
-    place-items: center; */
+    display: grid;
+    place-items: center;
 }
 
 .food-box > .menu-description {
     /* background-color: greenyellow; */
     grid-area: mDescription;
+    font-weight: 300;
     
+}
+
+.menu-price {
+    grid-area: mPrice;
+    padding-top: 2px;
 }
 
 .category-title {
     margin-top: 50px;
     margin-left: 30px;
-}
-
-.test {
-    font-weight: 300;
 }
 
 .drink-box {
