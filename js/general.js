@@ -102,7 +102,7 @@ menuDrinks.addEventListener('click', () => {
     }
     
     for (i = 0; i < drinks.length; i++) {
-        drinks[i].style.display = 'flex'
+        drinks[i].style.display = 'inherit'
         drinks[i].style.position = 'relative'
     }
 })
