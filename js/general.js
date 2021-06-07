@@ -42,7 +42,7 @@ toggleButton.addEventListener('click', () => {
 
 menuAppetizer.addEventListener('click', () => {
     
-    menuAppetizer.className = 'menu-links-appetizer active'
+    menuAppetizer.className += ' active'
     menuMainCourse.classList.remove('active')
     menuDrinks.classList.remove('active')
     
@@ -65,7 +65,7 @@ menuAppetizer.addEventListener('click', () => {
 
 menuMainCourse.addEventListener('click', () => {
     
-    menuMainCourse.className = 'menu-links-maincourse active'
+    menuMainCourse.className += ' active'
     menuAppetizer.classList.remove('active')
     menuDrinks.classList.remove('active')
 
@@ -87,7 +87,7 @@ menuMainCourse.addEventListener('click', () => {
 
 menuDrinks.addEventListener('click', () => {
     
-    menuDrinks.className = 'menu-links-drinks active'
+    menuDrinks.className += ' active'
     menuMainCourse.classList.remove('active')
     menuAppetizer.classList.remove('active')
     
@@ -108,3 +108,26 @@ menuDrinks.addEventListener('click', () => {
 })
 
 // End of menu category links function
+
+
+// Image Carousel (banner scrolling image)
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("banner-slides");
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+
+  slides[slideIndex-1].style.display = "block";  
+
+  setTimeout(showSlides, 3000); // Change image every 2 seconds
+}
+
+// End of Image Carousel
