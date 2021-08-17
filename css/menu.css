@@ -342,6 +342,10 @@ h3 {
     grid-template-columns: .3fr 1fr;
 }
 
+.sold-out {
+    color: rgb(202, 202, 202);
+}
+
 
 
 /* .food-box::after {
