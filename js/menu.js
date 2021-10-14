@@ -12,6 +12,7 @@ const appetizer = document.querySelectorAll('.appetizer')
 const maincourse = document.querySelectorAll('.maincourse')
 const drinks = document.querySelectorAll('.drinks')
 
+
 // Navbar burger button toggle
 
 toggleButton.addEventListener('click', () => {
@@ -110,24 +111,26 @@ menuDrinks.addEventListener('click', () => {
 // End of menu category links function
 
 
-// Image Carousel (banner scrolling image)
-var slideIndex = 0;
-showSlides();
+// function myFunction() {
+//     var element = document.gete;
+//     element.classList.add("mystyle");
+//   }
 
-function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("banner-slides");
 
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
+// Toggle menu editor
+// hash();
 
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
+// function hash() {
+//     var hash = location.hash
 
-  slides[slideIndex-1].style.display = "block";  
+//     switch(hash) {
+//         case '#test' : toggleMenuEditor();
+//             break;
+//         default : break;
+//     }
+// }
 
-  setTimeout(showSlides, 3000); // Change image every 2 seconds
-}
-
-// End of Image Carousel
+// function toggleMenuEditor() {
+//     appetizer[4].className += " sold-out";
+// }
+//End of toggle menu editor
