@@ -11,9 +11,9 @@ var slideIndex = 0;
 const closeButton = document.querySelector('#lightbox p')
 const bannerClick = document.querySelector('.banner')
 
-window.onload = () => {
-    showLightbox();
-}
+// window.onload = () => {
+//     showLightbox();
+// }
 
 bannerClick.addEventListener('click', () => {
     
