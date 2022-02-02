@@ -61,14 +61,15 @@ h3 {
 }
 
 .text-image-bottom {
-    position: relative;
-    bottom: 50px;
+    position: absolute;
+    bottom: 25px;
+    left: 0px;
 }
 
 .text-image-top {
-    position: relative;
-    bottom: 220px;
-    left: 220px;
+    position: absolute;
+    top: 12px;
+    right: 0px;
 }
 
 .text-image-bottom span, .text-image-top span {
