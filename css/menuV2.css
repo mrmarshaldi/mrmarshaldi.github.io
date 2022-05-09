@@ -531,6 +531,10 @@ h3 {
   .navbar-links.active {
     display: flex;
   }
+
+  .buffer {
+    margin-top: 40px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -552,6 +556,10 @@ h3 {
   .drink-box > .drink-banner {
     height: 512px;
     overflow: hidden;
+  }
+
+  .buffer {
+    margin-top: 0px;
   }
 
   /* .drink-banner img {
