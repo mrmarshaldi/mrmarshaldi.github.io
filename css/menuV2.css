@@ -145,7 +145,7 @@ h3 {
   height: auto;
   width: 100%;
   position: relative;
-  cursor: pointer;
+  /* cursor: pointer; */
 
   /* background-position: center;
 
@@ -385,7 +385,6 @@ h3 {
   display: grid;
   grid-template-areas:
     "image image image"
-    "table table table"
     "category variantHot variantIce"
     "name priceHot priceIce ";
   gap: 10px;
@@ -407,10 +406,6 @@ h3 {
 
 .drink-banner img {
   height: auto;
-}
-
-.drink-box table {
-  grid-area: table;
 }
 
 .drink-box > .drink-category {

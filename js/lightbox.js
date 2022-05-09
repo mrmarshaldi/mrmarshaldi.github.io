@@ -1,60 +1,41 @@
-// const lightbox = document.createElement('div')
-// var text = document.createTextNode('Close X')
-
-// lightbox.id = 'lightbox'
-// document.body.appendChild(lightbox)
-
-// const a = document.getElementById('lightbox')
-// a.appendChild(text)
-
 var slideIndex = 0;
-const closeButton = document.querySelector('#lightbox p')
-const bannerClick = document.querySelector('.banner')
+// const closeButton = document.querySelector("#lightbox p");
+// const bannerClick = document.querySelector(".banner");
 
 // window.onload = () => {
 //     showLightbox();
 // }
 
-bannerClick.addEventListener('click', () => {
-    
-    showLightbox();
+// bannerClick.addEventListener("click", () => {
+//   showLightbox();
+// });
 
-})
+// lightbox.addEventListener("click", (e) => {
+//   if (e.target !== e.currentTarget) return;
+//   lightbox.classList.remove("active");
+// });
 
-lightbox.addEventListener('click', e => {
-
-    if(e.target !== e.currentTarget) return
-    lightbox.classList.remove('active')
-
-})
-
-closeButton.addEventListener('click', () => {
-
-    lightbox.classList.remove('active')
-
-})
-
+// closeButton.addEventListener("click", () => {
+//   lightbox.classList.remove("active");
+// });
 
 function showLightbox() {
+  const bannerImages = document.querySelectorAll(".banner-slides img");
+  var child = document.getElementById("lightbox").getElementsByTagName("img");
+  lightbox.classList.add("active");
 
-    const bannerImages = document.querySelectorAll('.banner-slides img')
-    var child = document.getElementById('lightbox').getElementsByTagName('img')
-    lightbox.classList.add('active')
+  const img = document.createElement("img");
+  img.src = bannerImages[slideIndex - 1].src;
 
-    const img = document.createElement('img')
-    img.src = bannerImages[slideIndex-1].src
+  // while (lightbox.firstChild){
+  //     lightbox.removeChild(parent)
+  // }
 
-    // while (lightbox.firstChild){
-    //     lightbox.removeChild(parent)
-    // }
+  if (child.length >= 1) {
+    child[0].remove();
+  }
 
-    if(child.length >= 1){
-        child[0].remove()
-    }
-
-    lightbox.appendChild(img)
-    
-
+  lightbox.appendChild(img);
 }
 
 // Image Carousel (banner scrolling image)
@@ -66,13 +47,15 @@ function showSlides() {
   var slides = document.getElementsByClassName("banner-slides");
 
   for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
+    slides[i].style.display = "none";
   }
 
   slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
 
-  slides[slideIndex-1].style.display = "block";  
+  slides[slideIndex - 1].style.display = "block";
 
   setTimeout(showSlides, 3000); // Change image every 2 seconds
 }
