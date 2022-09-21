@@ -33,6 +33,8 @@ toggleButton.addEventListener("click", () => {
 
 // End of toggle burger button
 
+
+
 // Menu Categories link functionality
 
 menuAppetizer.addEventListener("click", () => {
@@ -125,3 +127,7 @@ menuDrinks.addEventListener("click", () => {
 //     appetizer[4].className += " sold-out";
 // }
 //End of toggle menu editor
+
+function start() {
+  menuAppetizer.className += " active";
+}

@@ -278,6 +278,12 @@ h3 {
   content: "";
 }
 
+.menu-links-appetizer.active,
+.menu-links-maincourse.active,
+.menu-links-drinks.active {
+  font-weight: 700;
+}
+
 /* .food-box = grid container for items in food category */
 /* This is template for food box that contains pictures */
 
