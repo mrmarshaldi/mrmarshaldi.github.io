@@ -57,7 +57,7 @@ function showSlides() {
 
   slides[slideIndex - 1].style.display = "block";
 
-  setTimeout(showSlides, 6000); // Change image every 2 seconds
+  setTimeout(showSlides, 6000); // Change image every 4 seconds
 }
 
 // End of Image Carousel
