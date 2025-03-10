@@ -260,6 +260,10 @@ h3 {
   text-align: center;
 }
 
+.menu-links-pastry {
+  text-align: center;
+}
+
 .menu-links-drinks {
   margin-right: 50px;
 }
@@ -267,6 +271,7 @@ h3 {
 .menu-links li:hover::after,
 .menu-links-appetizer.active::after,
 .menu-links-maincourse.active::after,
+.menu-links-pastry.active::after,
 .menu-links-drinks.active::after {
   position: absolute;
   top: 0px;
@@ -280,9 +285,10 @@ h3 {
 
 .menu-links-appetizer.active,
 .menu-links-maincourse.active,
+.menu-links-pastry.active,
 .menu-links-drinks.active {
   font-weight: 700;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 /* .food-box = grid container for items in food category */
@@ -301,6 +307,10 @@ h3 {
     "line line line";
   grid-template-rows: 0.3fr 1fr;
   grid-template-columns: 0.3fr 1fr;
+}
+
+.without-description {
+  margin-bottom: -3rem;
 }
 
 .sold-out {
@@ -475,6 +485,11 @@ h3 {
 }
 
 .maincourse {
+  position: relative;
+  display: none;
+}
+
+.pastry {
   position: relative;
   display: none;
 }

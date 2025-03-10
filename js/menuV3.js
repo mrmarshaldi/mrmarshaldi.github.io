@@ -4,11 +4,13 @@ const buttonLine = document.querySelectorAll(".burger-btn-line");
 
 const menuAppetizer = document.querySelector(".menu-links-appetizer");
 const menuMainCourse = document.querySelector(".menu-links-maincourse");
+const menuPastry = document.querySelector(".menu-links-pastry");
 const menuDrinks = document.querySelector(".menu-links-drinks");
 const foodBanner = document.querySelector(".food-banner");
 
 const appetizer = document.querySelectorAll(".appetizer");
 const maincourse = document.querySelectorAll(".maincourse");
+const pastry = document.querySelectorAll(".pastry");
 const drinks = document.querySelectorAll(".drinks");
 
 // Navbar burger button toggle
@@ -33,13 +35,12 @@ toggleButton.addEventListener("click", () => {
 
 // End of toggle burger button
 
-
-
 // Menu Categories link functionality
 
 menuAppetizer.addEventListener("click", () => {
   menuAppetizer.className += " active";
   menuMainCourse.classList.remove("active");
+  menuPastry.classList.remove("active");
   menuDrinks.classList.remove("active");
   foodBanner.classList.remove("inactive");
 
@@ -53,6 +54,11 @@ menuAppetizer.addEventListener("click", () => {
     maincourse[i].style.position = "absolute";
   }
 
+  for (i = 0; i < pastry.length; i++) {
+    pastry[i].style.display = "none";
+    pastry[i].style.position = "absolute";
+  }
+
   for (i = 0; i < drinks.length; i++) {
     drinks[i].style.display = "none";
     drinks[i].style.position = "absolute";
@@ -62,6 +68,7 @@ menuAppetizer.addEventListener("click", () => {
 menuMainCourse.addEventListener("click", () => {
   menuMainCourse.className += " active";
   menuAppetizer.classList.remove("active");
+  menuPastry.classList.remove("active");
   menuDrinks.classList.remove("active");
   foodBanner.className += " inactive";
 
@@ -75,6 +82,39 @@ menuMainCourse.addEventListener("click", () => {
     maincourse[i].style.position = "relative";
   }
 
+  for (i = 0; i < pastry.length; i++) {
+    pastry[i].style.display = "none";
+    pastry[i].style.position = "absolute";
+  }
+
+  for (i = 0; i < drinks.length; i++) {
+    drinks[i].style.display = "none";
+    drinks[i].style.position = "absolute";
+  }
+});
+
+menuPastry.addEventListener("click", () => {
+  menuPastry.className += " active";
+  menuAppetizer.classList.remove("active");
+  menuMainCourse.classList.remove("active");
+  menuDrinks.classList.remove("active");
+  foodBanner.className += " inactive";
+
+  for (i = 0; i < appetizer.length; i++) {
+    appetizer[i].style.display = "none";
+    appetizer[i].style.position = "absolute";
+  }
+
+  for (i = 0; i < maincourse.length; i++) {
+    maincourse[i].style.display = "none";
+    maincourse[i].style.position = "absolute";
+  }
+
+  for (i = 0; i < pastry.length; i++) {
+    pastry[i].style.display = "inherit";
+    pastry[i].style.position = "relative";
+  }
+
   for (i = 0; i < drinks.length; i++) {
     drinks[i].style.display = "none";
     drinks[i].style.position = "absolute";
@@ -84,6 +124,7 @@ menuMainCourse.addEventListener("click", () => {
 menuDrinks.addEventListener("click", () => {
   menuDrinks.className += " active";
   menuMainCourse.classList.remove("active");
+  menuPastry.classList.remove("active");
   menuAppetizer.classList.remove("active");
   foodBanner.className += " inactive";
 
@@ -95,6 +136,11 @@ menuDrinks.addEventListener("click", () => {
   for (i = 0; i < maincourse.length; i++) {
     maincourse[i].style.display = "none";
     maincourse[i].style.position = "absolute";
+  }
+
+  for (i = 0; i < pastry.length; i++) {
+    pastry[i].style.display = "none";
+    pastry[i].style.position = "absolute";
   }
 
   for (i = 0; i < drinks.length; i++) {
