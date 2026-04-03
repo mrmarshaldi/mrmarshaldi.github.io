@@ -274,13 +274,21 @@ h3 {
 .menu-links-pastry.active::after,
 .menu-links-drinks.active::after {
   position: absolute;
-  top: 0px;
+  left: 0px;
   right: 0px;
-  bottom: 5px;
+  bottom: 0px;
   width: 100%;
-  border-radius: 1px;
+  height: 0px; /* don't stretch over the text */
+  border-radius: 0px;
   border-bottom: 3px solid rgba(56, 56, 56, 0.7);
   content: "";
+  pointer-events: none;
+}
+
+/* Keep the link text above the underline */
+.menu-links li a {
+  position: relative;
+  z-index: 1;
 }
 
 .menu-links-appetizer.active,
@@ -295,6 +303,7 @@ h3 {
 /* This is template for food box that contains pictures */
 
 .food-box {
+  position: relative;
   display: grid;
   padding: 1rem 2rem;
   margin-bottom: -1.5rem;
@@ -302,11 +311,11 @@ h3 {
   width: 100%;
   min-height: 1vh;
   grid-template-areas:
-    "name name price"
-    "description description description"
-    "line line line";
-  grid-template-rows: 0.3fr 1fr;
-  grid-template-columns: 0.3fr 1fr;
+    "name price"
+    "description description"
+    "line line";
+  grid-template-rows: 0.3fr 1fr auto;
+  grid-template-columns: 1fr auto;
 }
 
 .without-description {
@@ -370,6 +379,7 @@ h3 {
 .food-box > .menu-name {
   grid-area: name;
   padding-bottom: 10px;
+  min-width: 0; /* allow grid item to shrink on small screens */
 }
 
 .food-box > .menu-image {
@@ -378,11 +388,26 @@ h3 {
   max-height: 110px;
   display: grid;
   place-items: center;
+  min-width: 0;
 }
 
 .food-box > .menu-description {
   grid-area: description;
   font-weight: 300;
+  min-width: 0; /* allow grid item to shrink on small screens */
+  overflow-wrap: anywhere; /* prevent long text from forcing overflow */
+  word-break: break-word;
+}
+
+/* Ensure long menu names also wrap instead of overflowing their card */
+.food-box > .menu-name h3 {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Price shouldn't force the grid to grow wider */
+.food-box > .menu-price {
+  min-width: 0;
 }
 
 /* This is template for food box without images, just plain text */
@@ -390,10 +415,11 @@ h3 {
 /* div for food and drink categories */
 
 .category-title {
+  position: relative;
   margin-top: 10px;
   padding-left: 30px;
-  width: auto;
   background-color: rgba(223, 223, 223, 0.5);
+  width: 100%;
 }
 
 /* .drink-box = grid container for items in drink category */
@@ -407,7 +433,6 @@ h3 {
   gap: 10px;
   /* grid-template-rows: .3fr 1fr; */
   grid-template-columns: 2fr 0.3fr 0.4fr;
-  width: 100%;
   margin-top: 30px;
 }
 
@@ -417,8 +442,6 @@ h3 {
   text-align: center;
   overflow: hidden;
   margin-bottom: 15px;
-  /* height: 512px; */
-  width: 100%;
 }
 
 .drink-banner img {
@@ -459,6 +482,23 @@ h3 {
 .drink-box ul ul li {
   font-weight: 300;
   padding-left: 10px;
+}
+
+.drink-name ul.drink-rows {
+  padding-left: 0px;
+  margin-left: 0px;
+}
+
+/* Subtext (nested items) flattened into their own rows */
+.drink-name li.drink-row-sub {
+  font-weight: 300;
+  padding-left: 10px;
+}
+
+/* Used to keep price rows aligned without relying on <br /> */
+.menu-price li.price-spacer {
+  visibility: hidden;
+  min-height: 1.2em;
 }
 
 .menu-price {
@@ -557,31 +597,80 @@ h3 {
   .buffer {
     margin-top: 40px;
   }
+
+  /* Mobile: avoid horizontal overflow from side-by-side 100%-width banners */
+  .food-banner {
+    flex-direction: column;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .food-banner > div {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .food-box {
+    padding: 1rem;
+    column-gap: 12px;
+  }
+
+  /* Mobile: make the top category links stay inside the viewport */
+  .menu-links ul {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    gap: 0px;
+  }
+
+  .menu-links li {
+    flex: 1;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.1;
+  }
+
+  .menu-links li a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu-links-appetizer {
+    margin-left: 0px;
+  }
+
+  .menu-links-drinks {
+    margin-right: 0px;
+  }
 }
 
 @media (min-width: 768px) {
-  .container {
-    width: auto;
-    height: auto;
-    display: grid;
-    place-items: center;
-  }
-
   .food-box {
     min-width: 768px;
   }
 
   .drink-box {
-    width: 768px;
+    min-width: 768px;
   }
 
   .drink-box > .drink-banner {
-    height: 512px;
+    max-height: 512px;
     overflow: hidden;
   }
 
   .buffer {
     margin-top: 0px;
+  }
+
+  .container {
+    width: auto;
+    height: auto;
+    display: grid;
+    place-items: center;
   }
 
   /* .drink-banner img {

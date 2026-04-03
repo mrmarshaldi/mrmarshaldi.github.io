@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
   <head>
@@ -12,27 +12,27 @@
   </head>
 
   <body onload="start()">
-    <nav class="navbar">
-      <div class="navbar-title">
-        <img src="images/icons/logo_morale_website.png" style="width: 50%" />
-      </div>
-
-      <button class="burger-btn">
-        <span class="burger-btn-line"></span>
-        <span class="burger-btn-line"></span>
-        <span class="burger-btn-line"></span>
-      </button>
-
-      <div class="navbar-links">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-
     <div class="container">
+      <nav class="navbar">
+        <div class="navbar-title">
+          <img src="images/icons/logo_morale_website.png" style="width: 50%" />
+        </div>
+
+        <button class="burger-btn">
+          <span class="burger-btn-line"></span>
+          <span class="burger-btn-line"></span>
+          <span class="burger-btn-line"></span>
+        </button>
+
+        <div class="navbar-links">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+
       <div class="banner">
         <div class="banner-slides fade">
           <!-- <div class="numbertext">5 / 6</div> -->
@@ -98,7 +98,7 @@
                 <img src="images/thumbnail/mushroomsoup.png" alt="Mushroom Soup" width="110px" height="110px" >
             </div> -->
 
-          <div class="menu-description test">
+          <div class="menu-description">
             <p>Romain lettuce with homemade caesar dressing, parmesan cheese served with croutons</p>
             <p style="font-size: 0.9rem; margin-top: 5px"><i>Add Chicken +30</i></p>
             <p style="font-size: 0.9rem; margin-top: 5px"><i>Add Egg +10</i></p>
@@ -1219,22 +1219,13 @@
           <h2 class="drink-variant ice">Ice</h2>
 
           <div class="drink-name">
-            <ul>
+            <ul class="drink-rows">
               <li>Shake Tea</li>
-              <ul>
-                <li>Lychee / Peach</li>
-              </ul>
-
+              <li class="drink-row-sub">Lychee / Peach</li>
               <li>Tea Selection</li>
-              <ul>
-                <li>Earl Grey / Chamomile / English Breakfast</li>
-              </ul>
-
+              <li class="drink-row-sub">Earl Grey / Chamomile / English Breakfast</li>
               <li>Loose Leaf Tea by TWG</li>
-              <ul>
-                <li>1837 Black Tea / Moroccan Mint Tea</li>
-              </ul>
-
+              <li class="drink-row-sub">1837 Black Tea / Moroccan Mint Tea</li>
               <li>Iced Tea</li>
               <li>Iced Tea Pandan</li>
             </ul>
@@ -1242,25 +1233,25 @@
 
           <div class="menu-price hot">
             <ul>
-              <li><br /></li>
-              <li><br /></li>
+              <li class="price-spacer"></li>
+              <li class="price-spacer"></li>
               <li>40</li>
-              <li><br /></li>
-              <li><br /></li>
+              <li class="price-spacer"></li>
+              <li class="price-spacer"></li>
               <li>50</li>
-              <li><br /></li>
-              <li><br /></li>
+              <li class="price-spacer"></li>
+              <li class="price-spacer"></li>
             </ul>
           </div>
 
           <div class="menu-price ice">
             <ul>
               <li>48</li>
-              <li><br /></li>
-              <li><br /></li>
-              <li><br /></li>
-              <li><br /></li>
-              <li><br /></li>
+              <li class="price-spacer"></li>
+              <li class="price-spacer"></li>
+              <li class="price-spacer"></li>
+              <li class="price-spacer"></li>
+              <li class="price-spacer"></li>
               <li class="buffer">35</li>
               <li>35</li>
             </ul>
@@ -1307,37 +1298,19 @@
           <h2 class="drink-variant ice">Ice</h2>
 
           <div class="drink-name">
-            <ul>
+            <ul class="drink-rows">
               <li>Sweet Cream Latte</li>
-              <ul>
-                <li>Ice Latte topped with creamy salted caramel</li>
-              </ul>
-
+              <li class="drink-row-sub">Ice Latte topped with creamy salted caramel</li>
               <li>Summer Sunrise</li>
-              <ul>
-                <li>Orange coffee soda</li>
-              </ul>
-
+              <li class="drink-row-sub">Orange coffee soda</li>
               <li>Rosemary Mint</li>
-              <ul>
-                <li>Mint tea with honey and rosemary</li>
-              </ul>
-
+              <li class="drink-row-sub">Mint tea with honey and rosemary</li>
               <li>Strawberry Blossom</li>
-              <ul>
-                <li>Tea with strawberry and soda</li>
-              </ul>
-
+              <li class="drink-row-sub">Tea with strawberry and soda</li>
               <li>Candy Berry</li>
-              <ul>
-                <li>Strawberry soda topped with sweet cream</li>
-              </ul>
-
+              <li class="drink-row-sub">Strawberry soda topped with sweet cream</li>
               <li>Choco Blackforest</li>
-              <ul>
-                <li>Milk chocolate with a hint of raspberry</li>
-              </ul>
-
+              <li class="drink-row-sub">Milk chocolate with a hint of raspberry</li>
               <li>Iced Matcha Latte</li>
             </ul>
           </div>
@@ -1345,20 +1318,17 @@
           <div class="menu-price ice">
             <ul>
               <li>55</li>
-              <br />
-              <br />
+              <li class="price-spacer"></li>
               <li>55</li>
-              <br />
+              <li class="price-spacer"></li>
               <li>55</li>
-              <br />
-              <br />
+              <li class="price-spacer"></li>
               <li>55</li>
-              <br />
+              <li class="price-spacer"></li>
               <li>55</li>
-              <br />
+              <li class="price-spacer"></li>
               <li>55</li>
-              <br />
-              <br />
+              <li class="price-spacer"></li>
               <li>45</li>
             </ul>
           </div>
@@ -1421,8 +1391,8 @@
           <div class="menu-price hot">
             <ul>
               <li>42</li>
-              <li><br /></li>
-              <li><br /></li>
+              <li class="price-spacer"></li>
+              <li class="price-spacer"></li>
             </ul>
           </div>
 
